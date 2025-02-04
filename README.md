@@ -27,7 +27,7 @@ Senior Capstone project for INFOST 490-201 Group 2
 
 ## Making Changes
 
-You should follow these steps whenever you make changes to the codebase.
+You should follow these steps whenever you make changes to the codebase. Type these commands out into the terminal and run them one at a time, replacing `your-branch-name` with the name of your branch. DO NOT just copy and paste them as is.
 
 - Create a new working branch
 
