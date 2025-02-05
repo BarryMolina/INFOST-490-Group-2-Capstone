@@ -1,5 +1,4 @@
 #! /bin/bash
 
-project_root=$1
-web_root=$2
-rsync -r --chown=www-data:www-data ${project_root}/public/ ${web_root}
+rsync -r --chown=www-data:www-data $PROJECT_ROOT/public/ $WEB_ROOT # copy over website files
+$PROJECT_ROOT/migrations/migrate.sh # run migrations

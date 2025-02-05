@@ -14,8 +14,10 @@ services:
       MYSQL_DATABASE: infost490_group2_db
       MYSQL_USER: infost490_group2
       MYSQL_PASSWORD: password
+      ENVIRONMENT: development
     volumes:
       - db-data:/var/lib/mysql
+      - ./migrations:/usr/src/migrations
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     ports:

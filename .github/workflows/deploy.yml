@@ -5,6 +5,7 @@ on:
     branches: ["main"]
     paths:
       - "public/**"
+      - "migrations/**"
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
@@ -13,6 +14,11 @@ concurrency:
 jobs:
   deploy:
     runs-on: [ubuntu-latest]
+    env:
+      APP_ENV: production
+      PROJECT_ROOT: /home/group2/INFOST-490-Group-2-Capstone
+      WEB_ROOT: /var/www/html
+      MYSQL_DATABASE: infost490_group2_db
     steps:
       - name: Execute SSH command
         uses: appleboy/ssh-action@v1.2.0
@@ -22,8 +28,13 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           port: 22
           script: |
-            cd ${{ secrets.PROJECT_ROOT }}
+            export PROJECT_ROOT=${{ env.PROJECT_ROOT }}
+            export WEB_ROOT=${{ env.WEB_ROOT }}
+            export APP_ENV=${{ env.APP_ENV }}
+            export MYSQL_DATABASE=${{ env.MYSQL_DATABASE}}
+            cd $PROJECT_ROOT
+            git fetch --all
             git checkout main
             git pull
             chmod +x deploy.sh
-            echo ${{ secrets.USER_PWD }} | sudo -S ./deploy.sh ${{ secrets.PROJECT_ROOT }} ${{ secrets.WEB_ROOT }}
+            echo ${{ secrets.USER_PWD }} | sudo -S -E ./deploy.sh
