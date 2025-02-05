@@ -1,0 +1,27 @@
+name: Deployment Workflow
+
+on:
+  push:
+    branches: ["main"]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: [ubuntu-latest]
+    steps:
+      - name: Execute SSH command
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          port: 22
+          script: |
+            cd ${{ secrets.PROJECT_ROOT }}
+            git pull
+            git checkout main
+            chmod +x deploy.sh
+            echo ${{ secrets.USER_PWD }} | sudo -S ./deploy.sh ${{ secrets.PROJECT_ROOT }} ${{ secrets.WEB_ROOT }}
