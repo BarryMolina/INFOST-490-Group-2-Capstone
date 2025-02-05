@@ -29,34 +29,35 @@ Senior Capstone project for INFOST 490-201 Group 2
 
 - Go to `http://localhost:8000` in your web browser
 
-## Making Changes
+## Making Your First Commit
 
-You should follow these steps whenever you make changes to the codebase. Type these commands out into the terminal and run them one at a time, replacing `your-branch-name` with the name of your branch. DO NOT just copy and paste them as is.
+You should follow these steps whenever you make changes to the codebase. Type these commands out into the terminal and run them one at a time, replacing `barrys-first-commit` with the name of your branch. DO NOT just copy and paste them as is.
 
 - Create a new working branch
 
 ```bash
->>> cd INFOST-490-Group-2-Capstone # go to the root directory
+>>> git status # make sure you're on the main branch. If you're not, run `git checkout main`
 >>> git pull # pull the latest changes on main
->>> git checkout -b your-branch-name # create a new working branch
+>>> git checkout -b barrys-first-commit # create a new working branch
 ```
 
-- Make your changes and then create a commit. For more info on creating good commit messages, see https://www.freecodecamp.org/news/writing-good-commit-messages-a-practical-guide/
+- Edit `public/index.php`. Add your name to the `team-members` list
+
+- Create a new commit with a descriptive commit message. For more info on creating good commit messages, see https://www.freecodecamp.org/news/writing-good-commit-messages-a-practical-guide/
 
 ```bash
 >>> git add . # stage all changes
->>> git commit -m "A descriptive commit message" # Describe what changes when this commit is applied. Ex. "Update map styling" or "Fix issue where courses don't load".
+>>> git commit -m "Add Barry Molina to the team members list" # Describe what changes when this commit is applied. Ex. "Update map styling" or "Fix issue where courses don't load".
 ```
 
 - Make more changes and commits as necessary
 - If you would like to push YOUR branch to GitHub (for feedback, making sure your changes are saved somewhere other than your laptop, etc.) do:
 
 ```bash
->>> git checkout your-branch-name # make sure you're on your branch
->>> git push --set-upstream origin your-branch-name # This pushes the branch to GitHub
+>>> git push --set-upstream origin barrys-first-commit # This pushes the branch to GitHub
 ```
 
-- Future pushes to `your-branch-name` can be done with just:
+- Future pushes to `barrys-first-commit` can be done with just:
 
 ```bash
 >>> git push
@@ -65,13 +66,11 @@ You should follow these steps whenever you make changes to the codebase. Type th
 - When you're ready to merge your changes to the main branch:
 
 ```bash
->>> git checkout your-branch-name # make sure you're on your branch
->>> git git merge origin/main # merge any changes pushed by other team members. Resolve merge conflicts if necessary
 >>> git checkout main # go back to the main branch
->>> git pull # pull latest changes
->>> git merge your-branch-name # merge your changes into main
+>>> git pull # fetch and merge any changes pushed by other team members while you were working.
+>>> git merge barrys-first-commit # merge your changes into main. Resolve merge conflicts if necessary
 >>> git push # push you changes to GitHub
->>> get branch -D your-branch-name # delete the branch since all the changes are on main now (optional)
+>>> get branch -D barrys-first-commit # delete the branch since all the changes are on main now (optional)
 ```
 
 For more information see https://docs.github.com/en/get-started/using-github/github-flow NOTE: the above instructions does not go through creating a PR, but you may do so if you wish.
