@@ -41,7 +41,7 @@ You should follow these steps whenever you make changes to the codebase. Type th
 >>> git checkout -b barrys-first-commit # create a new working branch
 ```
 
-- Edit `public/index.php`. Add your name to the `team-members` list
+- Add your name to `public/team_members.php`.
 
 - Create a new commit with a descriptive commit message. For more info on creating good commit messages, see https://www.freecodecamp.org/news/writing-good-commit-messages-a-practical-guide/
 

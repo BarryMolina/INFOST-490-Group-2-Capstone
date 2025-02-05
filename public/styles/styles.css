@@ -1,4 +1,8 @@
-.greeting {
+.team-members {
   font-size: large;
   padding: 32px;
+}
+.team-members h1 {
+  font-size: x-large;
+  padding-bottom: 30px;
 }
