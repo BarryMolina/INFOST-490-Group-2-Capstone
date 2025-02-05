@@ -12,6 +12,7 @@ Senior Capstone project for INFOST 490-201 Group 2
 - `/public/index.php` The home page.
 - `/public/js` JavaScript files
 - `/public/styles` CSS style sheets
+- `/.github/workflows` GitHub Action workflows, including `deploy.yml` for automating deployments
 
 ## Local Development Setup
 
@@ -71,3 +72,7 @@ You should follow these steps whenever you make changes to the codebase. Type th
 ```
 
 For more information see https://docs.github.com/en/get-started/using-github/github-flow NOTE: the above instructions does not go through creating a PR, but you may do so if you wish.
+
+## Deployment
+
+- Simply merge your changes into the main branch and push to GitHub. This will trigger a GitHub Action that automatically deploys your code to the production server.
