@@ -9,6 +9,6 @@
 </head>
 <body>
 	<p class="greeting">
-		Hello from the Group 2 Senior Capstone project!!
+		Hello from the Group 2 Senior Capstone project!!!
 	</p>
 </body>
