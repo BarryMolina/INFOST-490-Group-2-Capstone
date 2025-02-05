@@ -14,10 +14,12 @@ Senior Capstone project for INFOST 490-201 Group 2
 - `/public/styles` CSS style sheets
 - `/.github/workflows` GitHub Action workflows, including `deploy.yml` for automating deployments
 - `/migrations` Where database migrations are stored. Follows the format `version-xxxx.sql`
+- `/Taskfile.yml` A collection of useful commands for managing the project. For example starting and stopping docker containers
 
 ## Local Development Setup
 
 - Download and install Docker Desktop https://docs.docker.com/desktop/setup/install/windows-install/
+- Install Task to run commands in `Taskfile.yml` https://taskfile.dev/installation/
 
 - From the root directory run:
 
