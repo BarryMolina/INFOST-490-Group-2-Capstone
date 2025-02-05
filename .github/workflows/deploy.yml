@@ -21,7 +21,7 @@ jobs:
           port: 22
           script: |
             cd ${{ secrets.PROJECT_ROOT }}
-            git pull
             git checkout main
+            git pull
             chmod +x deploy.sh
             echo ${{ secrets.USER_PWD }} | sudo -S ./deploy.sh ${{ secrets.PROJECT_ROOT }} ${{ secrets.WEB_ROOT }}
