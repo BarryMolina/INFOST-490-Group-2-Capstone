@@ -13,6 +13,7 @@ Senior Capstone project for INFOST 490-201 Group 2
 - `/public/js` JavaScript files
 - `/public/styles` CSS style sheets
 - `/.github/workflows` GitHub Action workflows, including `deploy.yml` for automating deployments
+- `/migrations` Where database migrations are stored. Follows the format `version-xxxx.sql`
 
 ## Local Development Setup
 
@@ -73,6 +74,16 @@ You should follow these steps whenever you make changes to the codebase. Type th
 
 For more information see https://docs.github.com/en/get-started/using-github/github-flow NOTE: the above instructions does not go through creating a PR, but you may do so if you wish.
 
+## Database Migrations
+
+- All database migrations are stored in the `migrations/` folder with the format `version-xxxx.sql`
+- To create a new migration, manually create the next file in the sequence. For example `version-0002.sql` after `version-0001.sql`
+- In the file, add your sql statements. You can assume that all previous migrations have been applied
+- To update the database running in docker, run `task db:migrate`
+- The production database will get updated when the new migration file is pushed to the `main` branch
+
+NOTE: to reset applied migrations, for example after running `task db:down` to reset the database, simply delete `migrations/.applied_migrations`. Then run `task db:migrate` to restore the database structure.
+
 ## Deployment
 
-- Simply merge your changes into the main branch and push to GitHub. This will trigger a GitHub Action that automatically deploys your code to the production server.
+- Simply merge your changes into the main branch and push to GitHub. This will trigger a GitHub Action that automatically deploys your code to the production server and runs any new migrations.
