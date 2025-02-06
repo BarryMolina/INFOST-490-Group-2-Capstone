@@ -16,7 +16,7 @@ jobs:
     runs-on: [ubuntu-latest]
     env:
       APP_ENV: production
-      PROJECT_ROOT: /home/group2/INFOST-490-Group-2-Capstone
+      PROJECT_ROOT: /home/group2/Senior-Capstone
       WEB_ROOT: /var/www/html
       MYSQL_DATABASE: infost490_group2_db
     steps:
