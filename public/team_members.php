@@ -5,5 +5,7 @@
 	<p>Team Members:</p>
 	<ul>
 		<li>Barry Molina</li>
+		<li>Eli VanderMolen</li>
+
 	</ul>
 </section>
